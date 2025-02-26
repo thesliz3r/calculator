@@ -328,15 +328,19 @@ ${t.amountWithVat}: ${item.withVat.toFixed(2)} ${item.currency}`;
               {history.map((item) => (
                 <div
                   key={item.id}
-                  className="border rounded-lg p-4 space-y-2 relative hover:shadow-md transition-shadow"
+                  className="border rounded-lg p-4 space-y-2 relative hover:shadow-md transition-shadow cursor-pointer"
+                  onClick={() => copyToClipboard(item)}
                 >
-                  <div className="flex justify-between items-start">
+                  <div className="flex justify-between items-start" onClick={(e) => e.stopPropagation()}>
                     <div className="text-sm text-gray-500">
                       {formatDate(item.timestamp)}
                     </div>
                     <div className="flex items-center space-x-2">
                       <button
-                        onClick={() => copyToClipboard(item)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          copyToClipboard(item);
+                        }}
                         className="p-1.5 text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 rounded transition-colors"
                         title={t.copy}
                       >
@@ -347,7 +351,10 @@ ${t.amountWithVat}: ${item.withVat.toFixed(2)} ${item.currency}`;
                         )}
                       </button>
                       <button
-                        onClick={() => deleteHistoryItem(item.id)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          deleteHistoryItem(item.id);
+                        }}
                         className="p-1.5 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
                         title={t.deleteItem}
                       >
