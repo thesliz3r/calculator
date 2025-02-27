@@ -1,6 +1,19 @@
-export type Theme = 'light' | 'dark';
 export type Language = 'en' | 'ru' | 'az';
 export type Currency = 'AZN' | 'USD' | 'EUR' | 'RUB';
+export type Theme = 'light' | 'dark';
+
+export interface CalculationHistory {
+  id: string;
+  timestamp: Date;
+  amount: number;
+  vatRate: number;
+  includesVat: boolean;
+  withVat: number;
+  withoutVat: number;
+  vatAmount: number;
+  currency: Currency;
+  convertedAmount?: number;
+}
 
 export interface Translations {
   title: string;
@@ -30,17 +43,4 @@ export interface Translations {
   salaryCalculator: string;
   leasingCalculator: string;
   timeCalculator: string;
-}
-
-export interface CalculationHistory {
-  id: string;
-  timestamp: Date;
-  amount: number;
-  vatRate: number;
-  includesVat: boolean;
-  currency: Currency;
-  convertedAmount?: number;
-  withVat: number;
-  withoutVat: number;
-  vatAmount: number;
 } 
