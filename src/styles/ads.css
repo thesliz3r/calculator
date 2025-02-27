@@ -1,0 +1,10 @@
+/* Advertisement styles */
+.ad-container {
+  min-height: 120px;
+  /* ... ad container styles ... */
+}
+
+.adsbygoogle {
+  width: 100%;
+  /* ... ad specific styles ... */
+} 

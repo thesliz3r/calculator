@@ -1,3 +1,309 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import './styles/themes.css';
+@import './styles/ads.css';
+@import './styles/components.css';
+
+/* Global transitions */
+* {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.ad-container {
+  min-height: 120px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  opacity: 0.95;
+  transition: opacity 0.3s;
+}
+
+.adsbygoogle {
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+}
+
+/* Add styles for the placeholder text */
+.ad-placeholder {
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Side advertisement containers */
+.side-ad {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 160px; /* Standard skyscraper ad width */
+  height: 600px; /* Standard skyscraper ad height */
+  z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1536px) {
+  .side-ad, .ad-container.vertical {
+    display: none; /* Hide side ads and vertical ads on smaller screens */
+  }
+}
+
+/* Update existing ad container for vertical ads */
+.ad-container.vertical {
+  min-height: 600px;
+  width: 160px;
+  position: sticky;
+  top: 1rem;
+}
+
+/* Improve mobile ad responsiveness */
+@media (max-width: 768px) {
+  .ad-container {
+    min-height: 100px;
+  }
+}
+
+/* Add hover effect for better visual integration */
+.ad-container:hover {
+  opacity: 1;
+}
+
+/* Placeholder styles for vertical ads */
+.ad-placeholder.vertical {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  height: 600px;
+  width: 160px;
+}
+
+/* Theme variables */
+:root[data-theme="light"] {
+  --bg-gradient-from: #EEF2FF;
+  --bg-gradient-to: #E0E7FF;
+  --bg-primary: #FFFFFF;
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --accent-primary: #4F46E5;
+  --accent-secondary: #818CF8;
+  --border-color: #E5E7EB;
+  --input-bg: #FFFFFF;
+  --input-border: #E5E7EB;
+  --button-hover: #F3F4F6;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --success-bg: #ECFDF5;
+  --success-text: #059669;
+  --history-hover: #F9FAFB;
+}
+
+:root[data-theme="dark"] {
+  --bg-gradient-from: #1a1a2e;
+  --bg-gradient-to: #16213e;
+  --bg-primary: #162447;
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --accent-primary: #00b4d8;
+  --accent-secondary: #48cae4;
+  --border-color: #2a4365;
+  --input-bg: #1a365d;
+  --input-border: #2d3748;
+  --button-hover: #2a4365;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --success-bg: #065f46;
+  --success-text: #6ee7b7;
+  --history-hover: #1a365d;
+}
+
+/* Common styles using CSS variables */
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--bg-gradient-from), var(--bg-gradient-to));
+}
+
+.bg-white {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.text-gray-800 {
+  color: var(--text-primary);
+}
+
+.text-gray-700, .text-gray-600 {
+  color: var(--text-secondary);
+}
+
+.text-accent-primary {
+  color: var(--accent-primary);
+}
+
+/* Form elements */
+input, select {
+  background-color: var(--input-bg) !important;
+  border-color: var(--input-border) !important;
+  color: var(--text-primary) !important;
+}
+
+input:focus, select:focus {
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 0 2px var(--accent-secondary) !important;
+}
+
+.bg-gray-100 {
+  background-color: var(--button-hover);
+}
+
+.bg-green-50 {
+  background-color: var(--success-bg);
+}
+
+.text-green-600 {
+  color: var(--success-text);
+}
+
+/* History item hover effect */
+.hover\:shadow-md:hover {
+  background-color: var(--history-hover);
+  border-color: var(--accent-primary);
+}
+
+/* Button styles */
+.bg-indigo-600 {
+  background-color: var(--accent-primary) !important;
+  color: #ffffff !important;
+}
+
+.hover\:bg-indigo-700:hover {
+  background-color: var(--accent-secondary) !important;
+}
+
+/* Ad container in dark mode */
+[data-theme="dark"] .ad-container {
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+}
+
+/* Additional styles for better readability */
+[data-theme="dark"] {
+  /* Make inputs more visible */
+  input, select {
+    background-color: var(--input-bg) !important;
+    border-color: var(--border-color) !important;
+    color: #ffffff !important;
+  }
+
+  /* Improve button visibility */
+  .bg-indigo-600 {
+    background-color: var(--accent-primary) !important;
+    color: #ffffff !important;
+  }
+
+  /* Better contrast for secondary text */
+  .text-gray-700, .text-gray-600 {
+    color: var(--text-secondary) !important;
+  }
+
+  /* Make borders more visible */
+  .border {
+    border-color: var(--border-color) !important;
+  }
+
+  /* Improve checkbox and radio visibility */
+  input[type="checkbox"], input[type="radio"] {
+    border-color: var(--accent-primary) !important;
+    background-color: var(--input-bg) !important;
+  }
+
+  /* Better focus states */
+  input:focus, select:focus {
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 0 0 2px var(--accent-secondary) !important;
+  }
+
+  /* Header styles */
+  .bg-white.rounded-xl {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+  }
+
+  /* Title and header text */
+  h1.text-2xl {
+    color: var(--text-primary);
+  }
+
+  /* Language and theme switcher buttons */
+  button.bg-accent-primary.bg-opacity-10 {
+    background-color: rgba(0, 180, 216, 0.1) !important;
+  }
+
+  button.bg-accent-primary.bg-opacity-10:hover {
+    background-color: rgba(0, 180, 216, 0.2) !important;
+  }
+
+  /* Header icons */
+  .text-accent-primary {
+    color: var(--accent-primary) !important;
+  }
+
+  /* Dropdown and select boxes in header */
+  select.bg-white {
+    background-color: var(--input-bg) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+  }
+
+  /* VAT rate buttons */
+  button.bg-gray-100 {
+    background-color: var(--button-hover);
+    color: var(--text-primary);
+  }
+
+  button.bg-gray-100:hover {
+    background-color: var(--input-bg);
+  }
+
+  /* Active VAT rate button */
+  button.bg-indigo-600.text-white {
+    background-color: var(--accent-primary) !important;
+    color: #ffffff !important;
+  }
+
+  /* Result amounts and numbers */
+  .text-indigo-600, .text-green-600 {
+    color: var(--accent-primary) !important;
+    font-weight: 500;
+  }
+
+  /* Amount display in results */
+  .font-semibold, .font-medium {
+    color: var(--text-primary) !important;
+  }
+
+  /* Final amount (with VAT) */
+  .text-indigo-600.font-semibold {
+    color: var(--accent-primary) !important;
+    font-weight: 600;
+  }
+
+  /* Amount text in words (italic text) */
+  .text-gray-600.italic {
+    color: var(--text-secondary) !important;
+    opacity: 0.9;
+  }
+
+  /* Clear button */
+  .border.border-gray-300 {
+    border-color: var(--border-color) !important;
+    color: var(--text-primary) !important;
+  }
+
+  /* Amount labels */
+  .text-gray-800.font-medium {
+    color: var(--text-primary) !important;
+  }
+}

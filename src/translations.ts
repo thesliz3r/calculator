@@ -23,7 +23,12 @@ export const translations: Record<string, Translations> = {
     customRate: 'Custom Rate',
     enterCustomRate: 'Enter rate',
     currency: 'Currency',
-    convertedAmount: 'Converted Amount'
+    convertedAmount: 'Converted Amount',
+    showInWords: 'Show in words',
+    vatCalculator: 'VAT Calculator',
+    salaryCalculator: 'Salary Calculator',
+    leasingCalculator: 'Leasing Calculator',
+    timeCalculator: 'Time Calculator',
   },
   ru: {
     title: 'Universal hesablama',
@@ -47,7 +52,12 @@ export const translations: Record<string, Translations> = {
     customRate: 'Другая ставка',
     enterCustomRate: 'Введите ставку',
     currency: 'Валюта',
-    convertedAmount: 'Конвертированная сумма'
+    convertedAmount: 'Конвертированная сумма',
+    showInWords: 'Показать прописью',
+    vatCalculator: 'НДС Калькулятор',
+    salaryCalculator: 'Зарплатный Калькулятор',
+    leasingCalculator: 'Лизинговый Калькулятор',
+    timeCalculator: 'Калькулятор Времени',
   },
   az: {
     title: 'Universal hesablama',
@@ -71,6 +81,11 @@ export const translations: Record<string, Translations> = {
     customRate: 'Digər dərəcə',
     enterCustomRate: 'Dərəcəni daxil edin',
     currency: 'Valyuta',
-    convertedAmount: 'Çevrilmiş məbləğ'
+    convertedAmount: 'Çevrilmiş məbləğ',
+    showInWords: 'Sözlərlə göstər',
+    vatCalculator: 'ƏDV Kalkulyatoru',
+    salaryCalculator: 'Əmək haqqı Kalkulyatoru',
+    leasingCalculator: 'Lizinq Kalkulyatoru',
+    timeCalculator: 'Vaxt Kalkulyatoru',
   }
 };

@@ -1,0 +1,10 @@
+/* Theme variables */
+:root[data-theme="light"] {
+  --bg-gradient-from: #EEF2FF;
+  /* ... light theme variables ... */
+}
+
+:root[data-theme="dark"] {
+  --bg-gradient-from: #1a1a2e;
+  /* ... dark theme variables ... */
+} 

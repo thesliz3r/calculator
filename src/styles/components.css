@@ -1,0 +1,54 @@
+/* Component styles */
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--bg-gradient-from), var(--bg-gradient-to));
+}
+
+/* ... other component styles ... */
+
+/* Footer styles */
+footer {
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] footer {
+  background-color: var(--bg-primary);
+  border-color: var(--border-color);
+}
+
+footer a:hover {
+  color: var(--accent-primary);
+}
+
+/* Ensure footer stays at bottom */
+.min-h-screen {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+/* Navigation styles */
+[data-theme="dark"] nav.bg-white {
+  background-color: var(--bg-primary);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] nav a {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] nav a:hover {
+  color: var(--accent-primary);
+}
+
+[data-theme="dark"] nav a.active {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+} 

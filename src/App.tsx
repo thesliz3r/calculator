@@ -8,13 +8,14 @@ import { Advertisement } from './components/Advertisement';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { ThemeSwitcher } from './components/ThemeSwitcher';
 import { Footer } from './components/Footer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, RouteProps } from 'react-router-dom';
 import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { Navigation } from './components/Navigation';
 import { SalaryCalculator } from './components/SalaryCalculator';
 import { LeasingCalculator } from './components/LeasingCalculator';
 import { TimeCalculator } from './components/TimeCalculator';
 import { LanguageProvider } from './contexts/LanguageContext';
+import type { ReactNode, ReactElement } from 'react';
 
 // Currency exchange rates (you might want to fetch these from an API in production)
 const EXCHANGE_RATES = {
