@@ -54,9 +54,9 @@ export const translations: Record<string, Translations> = {
     currency: 'Валюта',
     convertedAmount: 'Конвертированная сумма',
     showInWords: 'Показать прописью',
-    vatCalculator: 'НДС Калькулятор',
-    salaryCalculator: 'Зарплатный Калькулятор',
-    leasingCalculator: 'Лизинговый Калькулятор',
+    vatCalculator: 'Калькулятор НДС',
+    salaryCalculator: 'Калькулятор Зарплаты',
+    leasingCalculator: 'Калькулятор Лизинга',
     timeCalculator: 'Калькулятор Времени',
   },
   az: {

@@ -293,13 +293,6 @@ ${showInWords ? numberToWords(item.withVat, language) : ''}
     }
   };
 
-  // Add these helper functions at the top of VatCalculator component
-  const copyAmountToClipboard = (amount: number, currency: string) => {
-    navigator.clipboard.writeText(`${formatNumber(amount)} ${currency}`).then(() => {
-      // Could add a small visual feedback here if needed
-    });
-  };
-
   return (
     <div className="space-y-6 relative">
       {/* Notification */}
